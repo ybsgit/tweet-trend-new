@@ -11,10 +11,21 @@ pipeline{
     }
     
     stages{
-stage('Build'){
+      stage('Build'){
     steps{
         sh 'mvn clean deploy'
     }
-}
- }
+    }
+    }
+        stage('build && SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('sonar-cloud') {
+                    // Optionally use a Maven environment you've configured already
+    
+                        sh 'mvn clean package sonar:sonar'
+
+                }
+            }
+        }
+
 }
