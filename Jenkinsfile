@@ -22,7 +22,7 @@ pipeline{
                 withSonarQubeEnv('sonar-cloud') {
                     // Optionally use a Maven environment you've configured already
     
-                        sh 'mvn package sonar:sonarv -D project.settings=sonar-project.properties'
+                        sh 'mvn package sonar:sonar -D project.settings=sonar-project.properties'
 
                 }
             }
