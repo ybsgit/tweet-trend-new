@@ -16,7 +16,7 @@ pipeline{
         sh 'mvn clean deploy'
     }
     }
-    }
+    
         stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonar-cloud') {
@@ -27,5 +27,5 @@ pipeline{
                 }
             }
         }
-
+    }
 }
