@@ -1,3 +1,4 @@
+def registry = 'https://valaxy90.jfrog.io/'
 pipeline{
     
     agent {
